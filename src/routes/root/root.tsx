@@ -10,7 +10,7 @@ export default function Root() {
     <Container className='root'>
       <Row>
         <Col>
-          <Link to='/one'>
+          <Link to='one'>
             <Button variant="outline-primary">One</Button>
           </Link>
         </Col>
