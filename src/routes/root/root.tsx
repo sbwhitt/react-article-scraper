@@ -14,16 +14,6 @@ export default function Root() {
             <Button variant="outline-primary">One</Button>
           </Link>
         </Col>
-        <Col>
-        <Link to='/two'>
-            <Button variant="outline-primary">Two</Button>
-          </Link>
-        </Col>
-        <Col>
-        <Link to='/three'>
-            <Button variant="outline-primary">Three</Button>
-          </Link>
-        </Col>
       </Row>
     </Container>
   );
