@@ -1,0 +1,12 @@
+.root {
+  text-align: center;
+}
+
+.row {
+  margin: 0 25% 0 25%;
+  box-shadow: 1px 1px 3px gray;
+}
+
+.col {
+  padding: 1rem;
+}
