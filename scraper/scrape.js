@@ -11,13 +11,11 @@ async function scrape(url) {
     });
 
     const $ = cheerio.load(res.data);
-    var list = [];
+    var s = "";
     $("#app").find("p").each(function(index, element) {
-        list.push($(element).text());
+        s += $(element).text();
     });
-    for (i in list) {
-        console.log(list[i]);
-    }
+    return s;
 }
 
-scrape("");
+exports.scrape = scrape;
