@@ -1,10 +1,20 @@
 const express = require("express");
+const cors = require("cors");
+const scrape = require("./scrape").default;
+
 const app = express();
+app.use(cors());
 const port = 4000;
-const scrape = require("./scrape");
 
 app.get("/api/scrape", (req, res) => {
-    scrape(req.body).then(data => res.send(data));
+    scrape(req.query.url)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            console.log(err);
+            res.send(err);
+        });
 });
 
 app.listen(port, () => {

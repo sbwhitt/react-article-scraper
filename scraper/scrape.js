@@ -18,4 +18,4 @@ async function scrape(url) {
     return s;
 }
 
-exports.scrape = scrape;
+exports.default = scrape;

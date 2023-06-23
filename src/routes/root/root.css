@@ -1,7 +1,23 @@
-.root {
-  text-align: center;
+.left-panel {
+  position: fixed;
+  left: 0;
+  width: 30%;
+  height: 100vh;
+  text-align: left;
+  border-right: solid;
+}
+
+.right-panel {
+  position: absolute;
+  left: 30%;
+  text-align: left;
 }
 
 .col {
   padding: 1rem;
+}
+
+.panel-button {
+  width: 100%;
+  margin-bottom: 1rem;
 }
