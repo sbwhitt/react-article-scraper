@@ -1,16 +1,37 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { addSummary, selectSummaries } from './summariesSlice';
+import SummaryCard from '../../components/SummaryCard';
 import Container from 'react-bootstrap/Container';
 import { Button, Form, InputGroup } from 'react-bootstrap';
 
 export default function Scrape() {
+  const summaries = useAppSelector(selectSummaries);
+  const dispatch = useAppDispatch();
+
   const [url, setUrl] = useState('');
-  const [body, setBody] = useState('');
+  //const [body, setBody] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleScrape = (url: string) => {
+    setLoading(true);
+
     axios.get('http://localhost:4000/api/scrape', {
       params: { url: url }
-    }).then(res => setBody(res.data));
+    }).then(res => {
+      setLoading(false);
+      dispatch(
+        addSummary({
+          summary: res.data,
+          url: url
+        })
+      );
+    });
+  }
+
+  const renderSummaries = () => {
+    return [...summaries].reverse().map((value) => <SummaryCard summary={value} />);
   }
   
   return (
@@ -23,7 +44,8 @@ export default function Scrape() {
         </InputGroup>
       </Form>
       <hr />
-      <p>{body}</p>
+      <p>{loading && 'Loading...'}</p>
+      {renderSummaries()}
     </Container>
   );
 }

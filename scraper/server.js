@@ -20,7 +20,7 @@ app.get("/api/scrape", (req, res) => {
                 })
                 .catch(err => {
                     console.log("gpt error");
-                    //console.log(err);
+                    console.log(err);
                     res.send(err);
                 });
         })

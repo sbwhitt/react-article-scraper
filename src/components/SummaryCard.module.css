@@ -1,0 +1,14 @@
+.card {
+    padding: 1rem;
+    box-shadow: 2px 3px 4px #dedede;
+    margin-bottom: 0.5rem;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.link {
+    text-decoration: none;
+}
