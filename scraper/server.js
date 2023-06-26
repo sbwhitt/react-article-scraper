@@ -10,11 +10,11 @@ const port = 4000;
 app.get("/api/scrape", (req, res) => {
     scrape(req.query.url)
         .then(data => {
-            console.log("scrape query");
+            //console.log("scrape query");
             //console.log(data);
             gpt(data)
                 .then(gptRes => {
-                    console.log("gpt query");
+                    //console.log("gpt query");
                     //console.log(gptRes.data.choices[0].message.content);
                     res.send(gptRes.data.choices[0].message.content);
                 })
@@ -26,7 +26,7 @@ app.get("/api/scrape", (req, res) => {
         })
         .catch(err => {
             console.log("scrape error");
-            //console.log(err);
+            console.log(err);
             res.send(err);
         });
 });

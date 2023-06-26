@@ -33,7 +33,7 @@ export default function Scrape() {
   const renderSummaries = () => {
     return [...summaries].reverse().map((value) => <SummaryCard summary={value} />);
   }
-  
+
   return (
     <Container className='url-input'>
       <Form>
