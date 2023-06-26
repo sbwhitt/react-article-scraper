@@ -4,13 +4,14 @@
   width: 30%;
   height: 100vh;
   text-align: left;
-  border-right: solid;
+  box-shadow: 2px 3px 4px #dedede;
 }
 
 .right-panel {
   position: absolute;
   left: 30%;
   text-align: left;
+  margin-top: 1rem;
 }
 
 .col {

@@ -12,7 +12,7 @@ async function scrape(url) {
 
     const $ = cheerio.load(res.data);
     var s = "";
-    $("#app").find("p").each(function(index, element) {
+    $("article").find("p").each(function(index, element) {
         s += $(element).text();
     });
     return s;
