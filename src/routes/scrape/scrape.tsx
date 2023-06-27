@@ -11,7 +11,6 @@ export default function Scrape() {
   const dispatch = useAppDispatch();
 
   const [url, setUrl] = useState('');
-  //const [body, setBody] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleScrape = (url: string) => {
@@ -21,12 +20,13 @@ export default function Scrape() {
       params: { url: url }
     }).then(res => {
       setLoading(false);
-      dispatch(
-        addSummary({
+      if (res.status === 200) {
+        dispatch(addSummary({
           summary: res.data,
           url: url
-        })
-      );
+        }));
+      }
+      else console.log(res);
     });
   }
 
