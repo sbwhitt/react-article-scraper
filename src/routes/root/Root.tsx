@@ -1,4 +1,4 @@
-import './root.css';
+import './Root.css';
 import { Route, Link, Routes } from 'react-router-dom';
 import Scrape from '../scrape/Scrape';
 // import Gpt from '../gpt/gpt';
