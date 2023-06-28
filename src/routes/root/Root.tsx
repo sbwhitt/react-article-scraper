@@ -13,10 +13,10 @@ export default function Root() {
       <Row>
         <Col className='left-panel'>
           <Link to='scrape'>
-            <Button className='panel-button' variant="primary">scrape</Button>
+            <Button className='panel-button' variant="primary">article scraper</Button>
           </Link>
           <Link to='prompt'>
-            <Button className='panel-button' variant="primary">prompt</Button>
+            <Button className='panel-button' variant="primary">prompt url</Button>
           </Link>
         </Col>
         <Col lg="8" className='right-panel'>
