@@ -5,11 +5,11 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-async function gpt(input) {
+async function gpt(prompt, input) {
     const chat = await openai.createChatCompletion(
         {
             model: "gpt-3.5-turbo",
-            messages: [{ role: "assistant", content: "summarize this text in a few sentences: \n" + input }],
+            messages: [{ role: "assistant", content: prompt + input }],
         },
         {
             headers: {
