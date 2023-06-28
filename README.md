@@ -1,6 +1,6 @@
-# Article Scraper
+# URL Scraper
 
-Barebones React/Redux/Typescript applet that scrapes online news articles and generates a summary of the main points using ChatGPT 3.5. 
+React/Redux/Typescript applet that scrapes urls and parses them using ChatGPT 3.5. 
 
 
 ## Available Scripts
