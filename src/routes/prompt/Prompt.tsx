@@ -7,14 +7,19 @@ export default function Prompt() {
   const [prompt, setPrompt] = useState('');
   const [url, setUrl] = useState('');
   const [body, setBody] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleGpt = (prompt: string, url: string) => {
+    setLoading(true);
     axios.get('http://localhost:4000/api/prompt', {
       params: {
         prompt: prompt,
         url: url
       }
-    }).then(res => setBody(res.data));
+    }).then((res) => {
+      setLoading(false);
+      setBody(res.data);
+    });
   }
   
   return (
@@ -29,6 +34,7 @@ export default function Prompt() {
         </InputGroup>
       </Form>
       <hr />
+      <p>{loading && 'Loading...'}</p>
       <p>{body}</p>
     </Container>
   );

@@ -4,6 +4,7 @@
   width: 30%;
   height: 100vh;
   text-align: left;
+  /* border-right: 1px solid #343a40; */
   box-shadow: 2px 3px 4px #dedede;
 }
 
