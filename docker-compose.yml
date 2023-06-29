@@ -4,3 +4,17 @@ services:
   backend:
     env_file:
       "./.env"
+    build:
+      context: "."
+      dockerfile: "./server/Dockerfile.server"
+    ports:
+      - "4000:4000"
+
+  frontend:
+    build:
+      context: "./"
+      dockerfile: "./Dockerfile"
+    ports:
+      - "3000:3000"
+    links:
+      - "backend:be"

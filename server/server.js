@@ -5,7 +5,6 @@ const gpt = require("./gpt").default;
 
 const app = express();
 app.use(cors());
-const port = 4000;
 
 app.get("/api/scrape", (req, res) => {
     scrape.article(req.query.url)
@@ -42,6 +41,8 @@ app.get("/api/prompt", (req, res) => {
         });
 });
 
-app.listen(port, () => {
+const port = 4000;
+const host = "0.0.0.0";
+app.listen(port, host, () => {
   console.log(`Example app listening on port ${port}`);
 });

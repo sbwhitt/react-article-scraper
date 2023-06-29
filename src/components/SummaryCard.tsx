@@ -4,7 +4,7 @@ import { Summary } from "../routes/scrape/summariesSlice";
 
 export default function SummaryCard(props: {summary: Summary}) {
   return (
-    <a className={styles.link} target='_blank' href={props.summary.url}>
+    <a className={styles.link} target='_blank' rel='noreferrer' href={props.summary.url}>
       <Card className={styles.card}>
         <p>{props.summary.url}</p>
         <p>{props.summary.summary}</p>
