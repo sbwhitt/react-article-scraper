@@ -21,4 +21,4 @@ async function gpt(prompt, input) {
     return chat;
 }
 
-exports.default = gpt;
+exports.gpt = gpt;
