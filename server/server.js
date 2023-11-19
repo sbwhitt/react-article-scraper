@@ -42,5 +42,5 @@ app.get("/api/prompt", (req, res) => {
 const port = 4000;
 const host = "0.0.0.0";
 app.listen(port, host, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`server listening on port ${port}`);
 });
