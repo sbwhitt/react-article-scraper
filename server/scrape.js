@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-async function article(url) {
+async function scrape(url, target) {
     const res = await axios.request({
         method: "GET",
         url: url,
@@ -12,28 +12,10 @@ async function article(url) {
 
     const $ = cheerio.load(res.data);
     var s = "";
-    $("article").find("p").each(function(index, element) {
+    $(target).find("p").each(function(index, element) {
         s += $(element).text();
     });
     return s;
 }
 
-async function text(url) {
-    const res = await axios.request({
-        method: "GET",
-        url: url,
-        headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
-        }
-    });
-
-    const $ = cheerio.load(res.data);
-    var s = "";
-    $("body").find("p").each(function(index, element) {
-        s += $(element).text();
-    });
-    return s;
-}
-
-exports.article = article;
-exports.text = text;
+exports.scrape = scrape;
